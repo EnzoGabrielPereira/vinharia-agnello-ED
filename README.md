@@ -3,6 +3,12 @@
 Projeto desenvolvido para a matéria de Edge Computing da FIAP. O objetivo é monitorar a luminosidade de um ambiente de armazenamento de vinhos usando Arduino, acendendo LEDs de alerta e acionando uma buzina quando a luz estiver alta demais.
 
 ---
+## Time Nimbus Tech - 1ESPJ
+
+- Enzo Gabriel
+- Henrique Gumbys
+- Pedro Moura
+---
 
 ## O que o projeto faz
 
@@ -90,7 +96,7 @@ O buzzer também tem um lado positivo (+) e um negativo (−), normalmente indic
 
 1. Abra a Arduino IDE
 2. No menu superior, clique em **Ferramentas → Placa** e selecione **Arduino Uno**
-3. Ainda em **Ferramentas**, clique em **Porta** e selecione a porta que aparece com o Arduino (geralmente algo como `COM3` no Windows ou `/dev/cu.usbmodem...` no Mac)
+3. Ainda em **Ferramentas**, clique em **Porta** e selecione a porta que aparece com o Arduino (geralmente algo como `COM5` no Windows ou `/dev/cu.usbmodem...` no Mac)
    - Se não aparecer nenhuma porta, tente outro cabo USB ou outra entrada do computador
 
 ---
@@ -106,22 +112,30 @@ int ledVerd = 7;
 int ledAmar = 8;
 int buzzer = 4;
 
-void setup() {
+
+void setup()
+{
   pinMode(ledVerm, OUTPUT);
   pinMode(ledVerd, OUTPUT);
   pinMode(ledAmar, OUTPUT);
   pinMode(buzzer, OUTPUT);
+
   Serial.begin(9600);
 }
 
-void loop() {
+void loop()
+{
   int valor = analogRead(A0);
   Serial.println(valor);
 
   if (valor < 500) {
-    digitalWrite(ledVerd, HIGH);
+    digitalWrite(ledVerd, LOW);
     digitalWrite(ledAmar, LOW);
-    digitalWrite(ledVerm, LOW);
+    digitalWrite(ledVerm, HIGH);
+
+    tone(buzzer, 800);
+    delay(3000);
+    noTone(buzzer);   
   }
   else if (valor < 800) {
     digitalWrite(ledVerd, LOW);
@@ -129,12 +143,9 @@ void loop() {
     digitalWrite(ledVerm, LOW);
   }
   else {
-    digitalWrite(ledVerd, LOW);
+    digitalWrite(ledVerd, HIGH);
     digitalWrite(ledAmar, LOW);
-    digitalWrite(ledVerm, HIGH);
-    tone(buzzer, 800);
-    delay(3000);
-    noTone(buzzer);
+    digitalWrite(ledVerm, LOW);  
   }
 
   delay(500);
@@ -160,3 +171,10 @@ Se quiser ver os números que o sensor está lendo, abra o **Serial Monitor** (`
 ## Observação
 
 Os valores **500** e **800** foram os que funcionaram melhor durante nossos testes. Se no seu ambiente o sensor reagir diferente do esperado, você pode ajustar esses números diretamente no código, observando os valores que aparecem no Serial Monitor e decidindo onde faz mais sentido colocar cada limite.
+
+---
+
+## Links
+
+Link do projeto no Wokwi: https://wokwi.com/projects/462057407545696257
+Link do vídeo explicando o projeto: 
