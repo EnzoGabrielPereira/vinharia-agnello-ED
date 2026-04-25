@@ -176,5 +176,5 @@ Os valores **500** e **800** foram os que funcionaram melhor durante nossos test
 
 ## Links
 
-Link do projeto no Wokwi: https://wokwi.com/projects/462057407545696257
-Link do vídeo explicando o projeto: 
+- Link do projeto no Wokwi: [https://wokwi.com/projects/462057407545696257](https://wokwi.com/projects/462057407545696257)
+- Link do vídeo explicando o projeto: [https://www.youtube.com/watch?v=3z30k7ACh4M](https://www.youtube.com/watch?v=3z30k7ACh4M)
