@@ -129,13 +129,11 @@ void loop()
   Serial.println(valor);
 
   if (valor < 500) {
-    digitalWrite(ledVerd, LOW);
+    digitalWrite(ledVerd, HIGH);
     digitalWrite(ledAmar, LOW);
-    digitalWrite(ledVerm, HIGH);
+    digitalWrite(ledVerm, LOW);
 
-    tone(buzzer, 800);
-    delay(3000);
-    noTone(buzzer);   
+     
   }
   else if (valor < 800) {
     digitalWrite(ledVerd, LOW);
@@ -143,13 +141,18 @@ void loop()
     digitalWrite(ledVerm, LOW);
   }
   else {
-    digitalWrite(ledVerd, HIGH);
+    digitalWrite(ledVerd, LOW);
     digitalWrite(ledAmar, LOW);
-    digitalWrite(ledVerm, LOW);  
+    digitalWrite(ledVerm, HIGH);  
+    
+    tone(buzzer, 800);
+    delay(3000);
+    noTone(buzzer);  
   }
 
   delay(500);
 }
+
 ```
 
 3. Clique no botão **Upload** (ícone de seta →) no canto superior esquerdo da tela
