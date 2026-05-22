@@ -10,9 +10,9 @@ O objetivo é monitorar as condições ambientais de um espaço de armazenamento
 
 | Nome |
 |------|
-| Enzo Gabriel |
-| Henrique Gumbys |
-| Pedro Moura |
+| Enzo Gabriel RM:570659 |
+| Henrique Gumbys RM:570914 |
+| Pedro Moura RM:570715 |
 
 ---
 
@@ -153,9 +153,7 @@ O arquivo `.ino` está disponível neste repositório: [`vinheria_agnello.ino`](
 #include <LiquidCrystal_I2C.h>
 #include <DHT.h>
 
-// ======================
 // CONFIGURAÇÕES
-// ======================
 
 #define DHTPIN 2
 #define DHTTYPE DHT22 // 22 para o wokiwi e 11 para projeto físico
@@ -170,9 +168,9 @@ int ledAmar = 8;
 int buzzer = 4;
 int ldr = A0;
 
-// ======================
+
 // CARACTERE CUSTOMIZADO
-// ======================
+
 
 byte coracao[8] = {
   B00000,
@@ -184,10 +182,6 @@ byte coracao[8] = {
   B00000,
   B00000,
 };
-
-// ======================
-// SETUP
-// ======================
 
 void setup()
 {
@@ -213,10 +207,6 @@ void setup()
   delay(2000);
   lcd.clear();
 }
-
-// ======================
-// LOOP
-// ======================
 
 void loop()
 {
@@ -368,4 +358,4 @@ void loop()
 ## 🔗 Links
 
 - 🔧 [Simulação no Wokwi](https://wokwi.com/projects/464677943829242881)
-- 🎥 [Vídeo explicando o projeto]()
+- 🎥 [Vídeo explicando o projeto](https://youtu.be/o5yvvT7Hh_Q?si=EswJ9Kua4drWJI_V)
